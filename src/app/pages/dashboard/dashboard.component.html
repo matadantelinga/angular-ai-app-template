@@ -1,0 +1,71 @@
+<header-dashboard></header-dashboard>
+
+<section>
+  <div class="container">
+    <div class="row" [class.add-project]="isAddProject">
+      <div class="col-md-12">
+        <div class="page-nav">
+          <div class="page-title">
+            <h1>Projects</h1>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn btn-blue" (click)="toggleAddProject()">
+              Create Project
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <ng-container *ngFor="let project of projects">
+            <div class="col-md-4">
+              <div class="project-card">
+                <div class="title">
+                  {{ project.name }}
+                  <div class="btn">&#8942;</div>
+                </div>
+                <div class="type">
+                  {{ project.type }}
+                </div>
+                <div class="icons">
+                  <img src="assets/icon1.svg" alt="" />
+                  <img src="assets/icon2.svg" alt="" />
+                  <img src="assets/icon3.svg" alt="" />
+                  <img src="assets/icon4.svg" alt="" />
+                  <img src="assets/icon5.svg" alt="" />
+                </div>
+                <div class="progress">
+                  <div class="bar"></div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="project-form" [class.active]="isAddProject">
+      <div class="form-title">
+        Create project
+        <div class="btn" (click)="toggleAddProject()">
+          <img src="assets/closebtn.svg" alt="" />
+        </div>
+      </div>
+      <form>
+        <div class="input-group">
+          <label>Project Name</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="input-group">
+          <label>Type usecase</label>
+          <select class="form-control">
+            <option value="1">Churn predictor</option>
+            <option value="2">Predictive maintenance</option>
+            <option value="3">Demand forecasting</option>
+            <option value="4">Customer evaluator</option>
+          </select>
+        </div>
+        <div class="btn-wrapper text-center">
+          <button class="btn-blue btn">Save & Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

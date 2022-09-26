@@ -1,0 +1,128 @@
+.page-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  .row {
+    height: 100%;
+    .page-padding {
+      flex: 0 0 50%;
+      max-width: 50%;
+      &.blue-bg {
+        background-color: var(--main-blue);
+      }
+    }
+  }
+}
+
+.form-wrapper {
+  .form-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .form-title,
+  .form-subtitle {
+    text-align: center;
+  }
+  .form-subtitle {
+    margin-bottom: 4rem;
+  }
+  .input-group {
+    position: relative;
+    margin-bottom: 15px;
+    &.mb-5 {
+      margin-bottom: 4rem !important;
+    }
+    input {
+      border: none;
+      border-bottom: solid 1px var(--main-gray);
+      border-radius: 0;
+      &:focus {
+        outline: none;
+        background-color: transparent;
+        border-bottom: solid 1px var(--main-blue);
+        box-shadow: none;
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 0;
+      img {
+        max-width: 15px;
+      }
+    }
+  }
+  .form-props {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .btn-wrapper {
+    width: 100%;
+    margin-top: 2em;
+  }
+}
+
+.logo-wrapper {
+  max-width: 90%;
+  margin: auto;
+}
+.form-wrapper {
+  max-width: 75%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.footnote {
+  margin-top: 3em;
+  font-size: 14px;
+  color: #00000091;
+}
+
+.slide-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  .slide-item {
+    text-align: center;
+    .image {
+      img {
+        object-fit: cover;
+        max-width: 100%;
+        width: 80%;
+        margin: 0 auto 1em;
+      }
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .text {
+      max-width: 85%;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+}
+
+::ng-deep {
+  .carousel-indicators {
+    margin-bottom: 0;
+    bottom: -50px;
+    button {
+      border-radius: 100%;
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+::ng-deep {
+  body {
+    background-color: #fafafa;
+  }
+}
+.row {
+  &.add-project {
+    max-width: calc(100% - 400px);
+    @media (min-width: 1366px) {
+      max-width: calc(100% - 200px);
+    }
+  }
+}
+section {
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+    .page-title {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+
+  .title {
+    font-size: 18px;
+    line-height: 27px;
+    position: relative;
+    .btn {
+      position: absolute;
+      right: 0;
+      top: -3px;
+      color: #9091a9;
+      cursor: pointer;
+    }
+  }
+  .type {
+    font-size: 14px;
+    color: #808191;
+    line-height: 21px;
+    margin: 10px 0 30px;
+  }
+  .icons {
+    margin-bottom: 20px;
+    img {
+      margin-right: 5px;
+    }
+  }
+  .progress {
+    height: 3px;
+    background-color: rgba(60, 71, 88, 0.1);
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    .bar {
+      background-color: var(--main-blue);
+      height: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 75%;
+      border-radius: 20px;
+      z-index: 99;
+    }
+  }
+}
+
+.project-form {
+  width: 0;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0%;
+  position: fixed;
+  right: 0;
+  top: 84px;
+  height: 100%;
+  z-index: 99;
+  &.active {
+    width: 450px;
+    padding: 20px;
+  }
+  .form-title {
+    font-size: 20px;
+    .btn {
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+    }
+  }
+  form {
+    margin-top: 30px;
+    .input-group {
+      display: flex;
+      margin-bottom: 15px;
+      label {
+        margin-right: 7px;
+      }
+      .form-control,
+      select {
+        border-radius: 7px;
+        &:focus {
+          outline: none;
+          background-color: transparent;
+          border: solid 1px var(--main-blue);
+          box-shadow: none;
+        }
+      }
+    }
+    .btn-wrapper {
+      margin-top: 20px;
+    }
+  }
+}

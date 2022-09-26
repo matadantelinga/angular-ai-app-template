@@ -1,0 +1,28 @@
+:root {
+  --main-blue: #2c59be;
+  --main-gray: #cccccc;
+  --main-blue-hover: #5e7fcb;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.page-padding {
+  padding: 1em;
+}
+a {
+  color: var(--main-blue);
+}
+.btn-blue {
+  background-color: var(--main-blue);
+  color: #fff;
+  font-size: 14px;
+  &:hover {
+    background-color: var(--main-blue-hover) !important;
+    color: #fff !important;
+  }
+}
+.btn-full {
+  width: 100%;
+}
