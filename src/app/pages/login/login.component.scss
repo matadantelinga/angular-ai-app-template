@@ -42,10 +42,26 @@
         border-bottom: solid 1px var(--main-blue);
         box-shadow: none;
       }
+      &:focus ~ .icon img {
+        filter: invert(28%) sepia(42%) saturate(2984%) hue-rotate(208deg)
+          brightness(90%) contrast(88%);
+      }
+
+      &.invalid {
+        border-bottom: solid 1px #bf1f1f;
+      }
+      &.invalid ~ .icon img {
+        filter: invert(17%) sepia(81%) saturate(2814%) hue-rotate(346deg)
+          brightness(100%) contrast(98%);
+      }
     }
     .icon {
       position: absolute;
       right: 0;
+      z-index: 99;
+      &.password {
+        cursor: pointer;
+      }
       img {
         max-width: 15px;
       }
@@ -66,7 +82,7 @@
   max-width: 90%;
   margin: auto;
 }
-.form-wrapper {
+form {
   max-width: 75%;
   margin: 0 auto;
   display: flex;

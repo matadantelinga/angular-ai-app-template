@@ -4,43 +4,59 @@
       <div class="logo-wrapper">
         <img src="assets/logo.svg" alt="" />
       </div>
-      <div class="form-wrapper">
-        <div class="form-title">Welcome to Turilyix.ai</div>
-        <div class="form-subtitle">
-          Analyse your business data in a smart & faster way
-        </div>
-        <div class="input-group mb-5">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="youremail@mail.com"
-          />
-          <div class="icon">
-            <img src="assets/user.svg" alt="" />
+      <form [formGroup]="loginForm">
+        <div class="form-wrapper">
+          <div class="form-title">Welcome to Turilyix.ai</div>
+          <div class="form-subtitle">
+            Analyse your business data in a smart & faster way
+          </div>
+          <div class="input-group mb-5">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="youremail@mail.com"
+              formControlName="email"
+              [class.invalid]="
+                formControl.email.invalid && formControl.email.touched
+              "
+            />
+            <div class="icon">
+              <img src="assets/user.svg" alt="" />
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              [type]="inputType"
+              class="form-control"
+              placeholder="******"
+              formControlName="password"
+              [class.invalid]="
+                formControl.password.invalid && formControl.password.touched
+              "
+            />
+            <div class="icon password" (click)="showPassword()">
+              <img src="assets/eye.svg" alt="" />
+            </div>
+          </div>
+          <div class="form-props">
+            <div class="checkbox">
+              <input type="checkbox" />
+              Remember me
+            </div>
+            <div class="forgot">
+              <a href="#">Forgot password</a>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn-blue btn btn-full" (click)="login()">
+              Login
+            </button>
+          </div>
+          <div class="footnote">
+            Dont have an account yet? <a href="#">Signup</a>
           </div>
         </div>
-        <div class="input-group">
-          <input type="password" class="form-control" placeholder="******" />
-          <div class="icon">
-            <img src="assets/eye.svg" alt="" />
-          </div>
-        </div>
-        <div class="form-props">
-          <div class="checkbox">
-            <input type="checkbox" />
-            Remember me
-          </div>
-          <div class="forgot">
-            <a href="#">Forgot password</a>
-          </div>
-        </div>
-        <div class="btn-wrapper">
-          <button class="btn-blue btn btn-full" (click)="login()">Login</button>
-        </div>
-        <div class="footnote">
-          Dont have an account yet? <a href="#">Signup</a>
-        </div>
-      </div>
+      </form>
     </div>
 
     <div class="page-padding blue-bg">

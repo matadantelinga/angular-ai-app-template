@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
@@ -9,6 +10,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig],
 })
 export class LoginComponent implements OnInit {
+  inputType = 'password';
+
   slides = [
     {
       image: 'assets/loginslide.png',
@@ -27,7 +30,20 @@ export class LoginComponent implements OnInit {
     },
   ];
 
-  constructor(config: NgbCarouselConfig, private router: Router) {
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
+
+  get formControl() {
+    return this.loginForm.controls;
+  }
+
+  constructor(
+    config: NgbCarouselConfig,
+    private router: Router,
+    private fb: FormBuilder
+  ) {
     config.showNavigationArrows = false;
     config.interval = 3000;
   }
@@ -35,6 +51,18 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.router.navigateByUrl('dashboard');
+    if (this.loginForm.valid) {
+      this.router.navigateByUrl('dashboard');
+    } else {
+      this.loginForm.markAllAsTouched();
+    }
+  }
+
+  showPassword() {
+    if (this.inputType === 'password') {
+      this.inputType = 'text';
+    } else {
+      this.inputType = 'password';
+    }
   }
 }
