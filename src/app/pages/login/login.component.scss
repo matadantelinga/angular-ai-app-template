@@ -36,6 +36,7 @@
       border: none;
       border-bottom: solid 1px var(--main-gray);
       border-radius: 0;
+      background-color: transparent;
       &:focus {
         outline: none;
         background-color: transparent;
@@ -49,6 +50,7 @@
 
       &.invalid {
         border-bottom: solid 1px #bf1f1f;
+        background-color: transparent;
       }
       &.invalid ~ .icon img {
         filter: invert(17%) sepia(81%) saturate(2814%) hue-rotate(346deg)
